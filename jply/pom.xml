@@ -140,6 +140,14 @@
                 </configuration>
             </plugin>
         </plugins>
+        
+        <extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ftp</artifactId>
+				<version>1.0-beta-6</version>
+			</extension>
+		</extensions>
     </build>
     
     <profiles>
@@ -193,7 +201,7 @@
     </profiles>
     
     <distributionManagement>
-        <snapshotRepository>
+        <!-- <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
             <name>Sonatype Nexus Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
@@ -206,10 +214,23 @@
         <site>
             <id>smurn</id>
             <url>scpexe://smurn.org/var/www/jply.smurn.org/</url>
-        </site>
+        </site>-->
+        
+		<repository>
+			<id>jzy3d-ftp</id>
+			<name>Jzy3d Maven Folder</name>
+			<url>ftp://ftp.cluster013.ovh.net/maven/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>jzy3d-ftp</id>
+			<name>Jzy3d Maven Folder SNAPSHOTS</name>
+			<url>ftp://ftp.cluster013.ovh.net/maven/snapshots</url>
+		</snapshotRepository>
     </distributionManagement>
     
     <dependencies>
+    	
+    
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>

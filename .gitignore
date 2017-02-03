@@ -3,3 +3,11 @@ target/
 *.*~
 .idea/
 *.iml
+
+
+consoledemo/.classpath
+consoledemo/.project
+consoledemo/.settings/
+jply/.classpath
+jply/.project
+jply/.settings/
