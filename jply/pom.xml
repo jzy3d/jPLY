@@ -3,15 +3,18 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- group ID is changed to deploy on Jzy3d's sonatype
     <groupId>org.smurn</groupId>
-    <artifactId>jply</artifactId>
+    <artifactId>jply</artifactId>-->
+    <groupId>org.jzy3d</groupId>
+    <artifactId>org.smurn.jply</artifactId>
     <version>0.2.1</version>
     <packaging>jar</packaging>
 
     <name>jPLY</name>
     <url>http://jply.smurn.org/jply/</url>
     <description>Java library to read files in the PLY format.</description>
-    
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -36,13 +39,13 @@
             <name>Stefan C. Mueller</name>
         </developer>
     </developers>
-    
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <netbeans.hint.license>apache20</netbeans.hint.license>
         <netbeans.checkstyle.format>true</netbeans.checkstyle.format>
     </properties>
-  
+
     <build>
         <plugins>
             <plugin>
@@ -140,7 +143,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        
+
         <extensions>
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
@@ -149,7 +152,7 @@
 			</extension>
 		</extensions>
     </build>
-    
+
     <profiles>
         <profile>
             <id>release</id>
@@ -195,42 +198,38 @@
                             </execution>
                         </executions>
                     </plugin>
-                </plugins>    
+                </plugins>
             </build>
         </profile>
     </profiles>
-    
+
     <distributionManagement>
-        <!-- <snapshotRepository>
-            <id>sonatype-nexus-snapshots</id>
+        <snapshotRepository>
+            <id>ossrh</id>
             <name>Sonatype Nexus Snapshots</name>
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
-            <id>sonatype-nexus-staging</id>
+            <id>ossrh</id>
             <name>Nexus Release Repository</name>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
-        <site>
-            <id>smurn</id>
-            <url>scpexe://smurn.org/var/www/jply.smurn.org/</url>
-        </site>-->
-        
-		<repository>
-			<id>jzy3d-ftp</id>
-			<name>Jzy3d Maven Folder</name>
-			<url>ftp://ftp.cluster013.ovh.net/maven/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>jzy3d-ftp</id>
-			<name>Jzy3d Maven Folder SNAPSHOTS</name>
-			<url>ftp://ftp.cluster013.ovh.net/maven/snapshots</url>
-		</snapshotRepository>
+
+  		<!--<repository>
+  			<id>jzy3d-ftp</id>
+  			<name>Jzy3d Maven Folder</name>
+  			<url>ftp://ftp.cluster013.ovh.net/maven/releases</url>
+  		</repository>
+  		<snapshotRepository>
+  			<id>jzy3d-ftp</id>
+  			<name>Jzy3d Maven Folder SNAPSHOTS</name>
+  			<url>ftp://ftp.cluster013.ovh.net/maven/snapshots</url>
+  		</snapshotRepository>-->
     </distributionManagement>
-    
+
     <dependencies>
-    	
-    
+
+
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
@@ -244,8 +243,8 @@
         </dependency>
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>  
-            <version>1.9.0-rc1</version> 
+            <artifactId>mockito-core</artifactId>
+            <version>1.9.0-rc1</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
